@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = ActiveModel::Session::VERSION
   spec.authors       = ["Kuba Kuźma"]
   spec.email         = ["kuba@jah.pl"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{Simple session model implemented on top of ActiveModel::Model}
+  spec.summary       = %q{Simple session model implemented on top of ActiveModel::Model}
   spec.homepage      = ""
   spec.license       = "MIT"
 
