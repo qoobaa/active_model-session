@@ -5,12 +5,12 @@ class SessionWithoutUserModelTest < Test::Unit::TestCase
     Object.send(:remove_const, :User) if defined?(User)
   end
 
-  test "is invalid when user model is nil" do
+  def test_is_invalid_when_user_model_is_nil
     session = ActiveModel::Session.new(user: nil, email: "alice@example.com", password: "secret")
     assert session.invalid?
   end
 
-  test "is invalid when user does not authenticate" do
+  def test_is_invalid_when_user_does_not_authenticate
     user = Object.new
     def user.authenticate(password)
       password == "secret"
@@ -19,7 +19,7 @@ class SessionWithoutUserModelTest < Test::Unit::TestCase
     assert session.invalid?
   end
 
-  test "is valid when user authenticates" do
+  def test_is_valid_when_user_authenticates
     user = Object.new
     def user.authenticate(password)
       password == "secret"

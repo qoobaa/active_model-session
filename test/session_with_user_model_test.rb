@@ -31,33 +31,33 @@ class SessionWithUserModelTest < Test::Unit::TestCase
     @model = @session = ActiveModel::Session.new
   end
 
-  test "is valid with valid credentials" do
+  def test_is_valid_with_valid_credentials
     @session.email = "alice@example.com"
     @session.password = "alicesecret"
     assert @session.valid?
   end
 
-  test "returns user_id when valid" do
+  def test_returns_user_id_when_valid
     @session.email = "bob@example.com"
     @session.password = "bobsecret"
     assert @session.valid?
     assert_equal 2, @session.user_id
   end
 
-  test "is invalid when user does not exist" do
+  def test_is_invalid_when_user_does_not_exist
     @session.email = "non-existing@example.com"
     assert @session.invalid?
     assert @session.errors[:password].present?
   end
 
-  test "is invalid with incorrect password" do
+  def test_is_invalid_with_incorrect_password
     @session.email = "alice@example.com"
     @session.password = "wrong-password"
     assert @session.invalid?
     assert @session.errors[:password].present?
   end
 
-  test "is invalid without email" do
+  def test_is_invalid_without_email
     @session.email = nil
     assert @session.invalid?
     assert @session.errors[:email].present?
