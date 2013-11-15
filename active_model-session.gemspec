@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["kuba@jah.pl"]
   spec.description   = %q{Simple session model implemented on top of ActiveModel::Model}
   spec.summary       = %q{Simple session model implemented on top of ActiveModel::Model}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/cowbell/active_model-session"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
