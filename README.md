@@ -14,7 +14,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install activemodel-session
+    $ gem install active_model-session
 
 ## Usage
 
@@ -47,7 +47,7 @@ provided normally by `has_secure_password` in `User` model. If you
 need to authenticate a different type of user, you can do:
 
      @session = ActiveModel::Session.new(session_params)
-     @session.user = Admin.find_by(email: session.email)
+     @session.user = Admin.find_by(email: @session.email)
      if @session.valid?
        # ...
 
