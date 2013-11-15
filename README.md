@@ -1,6 +1,6 @@
 # ActiveModel::Session
 
-A simple session model implemented using `ActiveModel::Model`.
+A simple session model implemented on top of `ActiveModel::Model`.
 
 ## Installation
 
