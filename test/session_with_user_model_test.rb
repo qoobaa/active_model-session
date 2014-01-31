@@ -47,7 +47,7 @@ class SessionWithUserModelTest < Test::Unit::TestCase
   def test_is_invalid_when_user_does_not_exist
     @session.email = "non-existing@example.com"
     assert @session.invalid?
-    assert @session.errors[:password].present?
+    assert @session.errors[:email].present?
   end
 
   def test_is_invalid_with_incorrect_password
