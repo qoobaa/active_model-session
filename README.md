@@ -64,4 +64,4 @@ session model and override some defaults:
 
 ## Copyright
 
-Copyright © 2013 Kuba Kuźma. See LICENSE for details.
+Copyright © 2014 Kuba Kuźma. See LICENSE for details.
