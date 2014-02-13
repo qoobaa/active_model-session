@@ -1,6 +1,6 @@
 # ActiveModel::Session
 
-`ActiveModel::Session` is a lightweight session model implemented 
+`ActiveModel::Session` is a lightweight session model implemented
 on top of `ActiveModel::Model`.
 
 ## Installation
@@ -21,7 +21,7 @@ Or install it yourself as:
 
 The most popular workflow is:
 
-    class SessionController < ApplicationController
+    class SessionsController < ApplicationController
       def new
         @session = ActiveModel::Session.new
       end
@@ -39,7 +39,7 @@ The most popular workflow is:
       private
 
       def session_params
-        params.require(:session).permit(:email, :password)
+        params.require(:active_model_session).permit(:email, :password)
       end
     end
 
