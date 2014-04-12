@@ -5,7 +5,8 @@ module ActiveModel
   class Session
     include Model
 
-    attr_accessor :password, :user
+    attr_accessor :password
+    attr_writer :user
     attr_reader :email
 
     validates :email, presence: true, if: -> { user.blank? }
@@ -14,7 +15,12 @@ module ActiveModel
     delegate :id, :authenticate, to: :user, prefix: true, allow_nil: true
 
     def email=(email)
+      remove_instance_variable(:@user) if defined?(@user)
       @email = email
+    end
+
+    def user
+      return @user if defined?(@user)
       @user = User.find_by(email: email)
     end
 
